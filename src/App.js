@@ -1,26 +1,56 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import web3 from './helper';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ImportPriv from './importPriv';
+import ImportSeed from './importSeed'; 
+import Create from './create'; 
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Tx = require('ethereumjs-tx').Transaction
+
+
+class App extends React.Component {
+
+
+  componentDidMount() {  }
+
+  NoMatch = () => {
+    return (
+      <div>No match</div>
+    )
+  }
+
+  render() {
+    return (
+      <div>
+         <Router>
+      <Container>
+     
+                   
+      <Row>
+       <Col><Link to='/'>Import Private</Link></Col>
+       <Col><Link to='/ImportSeed'>Import Seed</Link></Col>
+       <Col><Link to='/Create'>Create Account</Link></Col>
+      </Row>
+    </Container>
+    <Switch>
+      <Route exact path='/'  component={ImportPriv} />
+      <Route  path='/ImportSeed'  component={ImportSeed} /> 
+      <Route  path='/Create'  component={Create} /> 
+      <Route component={this.NoMatch}/> 
+      {/* <Route  path='/homepage'  component={homepage} />
+      <Route path='/pdf' component={pdf} />
+      */}
+    </Switch>
+    {/* <ImportPriv /> */}
+    </Router>
     </div>
   );
+  }
 }
 
 export default App;
