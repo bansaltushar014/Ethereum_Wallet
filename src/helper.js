@@ -11,6 +11,3 @@ const web3 = {
 
 web3.isDefine();
 export default web3.gweb;
-
-// torus
-// 6d46cdcbc43dcb18fdd4d77c6ce0a89a685dff8aa02b11bc3dfdac7fb9aca73e
