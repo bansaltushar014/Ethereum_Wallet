@@ -1,9 +1,9 @@
 
-# About
+### About
 
 Ethereum Wallet to understand how does a transaction occur, how does mnemonic work, and how do accounts get created. 
 
-# How to Start
+### How to Start
 
 * git clone https://github.com/bansaltushar014/Ethereum_Wallet.git
 * Start Ganache
@@ -11,7 +11,7 @@ Ethereum Wallet to understand how does a transaction occur, how does mnemonic wo
 * npm start
 
 
-# Technology & Tools
+### Technology & Tools
 
 * Web3
 * React
