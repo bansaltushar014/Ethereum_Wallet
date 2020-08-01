@@ -3,12 +3,9 @@ import web3 from './helper';
 import sendEth from './sendEth';
 import Card from 'react-bootstrap/Card';
 
-
 let bip39 = require("bip39");
 let hdkey = require('ethereumjs-wallet/hdkey');
-
-        
-
+   
 function CreateAccount(props) {
 
     const [account, setAccount] = useState(null)
@@ -17,9 +14,7 @@ function CreateAccount(props) {
    
 
     useEffect(() => { }, [])
-
-
-    
+  
     const createAccounts = async ()  => {
         
         
@@ -30,8 +25,7 @@ function CreateAccount(props) {
         
 
         console.log(hdwallet);
-        let wallet_hdpath = "m/44'/60'/0'/0/";
-    
+        let wallet_hdpath = "m/44'/60'/0'/0/";    
         let accounts = [];
                 
         for (let i = 0; i < 10; i++) {
@@ -63,15 +57,13 @@ function CreateAccount(props) {
                             </div>
                     })
                 }
-
-
             </div>
         )
     }
     
 
     return (
-        <div>
+        <div  style={{ margin: "100px" }}>
              {account ? (
                 <div>
                     <p> mnemonic is : {mnemonic} </p>
@@ -88,12 +80,3 @@ function CreateAccount(props) {
 export default CreateAccount;
 
 
-
-/*
-To do list 
-selection of any address
-on click show private key 
-show balance
-timer to refresh check balance update
-send money option  (make send money a single function and use it )
-*/
